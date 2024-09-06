@@ -8,19 +8,24 @@
 #include <time.h>
 
 int main() {
+	//			3 ЗАДАНИЕ
 
-	//			2 ЗАДАНИЕ
+	int* c;
+	int n, z = 0;
+	printf("Введите размер массива: ");
+	scanf_s("%d", &n);
 
-	int mi2 = 0, ma2 = 100, m = 0;
-	int b[10] = { 0 };
-
-	srand(time(NULL));
-
-	for (int i = 0; i < 10; i++) {
-		m = mi2 + rand() % (ma2 - mi2 + 1);
-		b[i] = m;
-		printf("%d ", b[i]);
+	c = (int*)malloc(n * sizeof(int));
+	for (int i = 0; i < n; i++) {
+		printf("Введите %d эл массива: ", i + 1);
+		scanf_s("%d", &z);
+		c[i] = z;
 	}
 
+	printf("\n");
+
+	for (int i = 0; i < n; i++) {
+		printf("%d ", c[i]);
+	}
 	return 0;
 }
