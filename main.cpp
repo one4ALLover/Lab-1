@@ -8,12 +8,14 @@
 #include <time.h>
 
 int main() {
-    //			4 ЗАДАНИЕ
+    //    	---------------4-----------------
+
+    setlocale(LC_ALL, "Russian");
 
     int mi3 = 0, ma3 = 5;
     int sum_str = 0, sum_sto = 0;
-    int n, m;
-    printf("Введите размер массива (r c): ");
+    int n, m, k;
+    printf("Введите размер массива через пробел): ");
     scanf_s("%d %d", &n, &m);
     int** h = (int**)malloc(n * sizeof(int*));
     srand(time(NULL));
@@ -30,15 +32,24 @@ int main() {
         printf("\n");
     }
 
-    for (int i = 0; i < 3; i++) {
+    printf("\n");
+    for (int i = 0; i < n; i++) {
         sum_str = 0;
-        sum_sto = 0;
-        for (int j = 0; j < 3; j++) {
+        for (int j = 0; j < m; j++) {
             sum_str += h[i][j];
-            sum_sto += h[j][i];
         }
-        printf("Сумма %d строки и столбца: %d / %d\n", i + 1, sum_str, sum_sto);
+        printf("Сумма %d строки: %d\n", i + 1, sum_str);
+    }
+
+    printf("\n");
+    for (int j = 0; j < m; j++) {
+        sum_sto = 0;
+        for (int i = 0; i < n; i++) {
+            sum_sto += h[i][j];
+        }
+        printf("Сумма %d столбца: %d\n", j + 1, sum_sto);
     }
 
     return 0;
 }
+//задание: в квад динам массиве посчитать сумму эл-ов кратных двум выше главной диагонали
