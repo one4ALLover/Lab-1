@@ -57,7 +57,7 @@ int main() {
         for (int j = i + 1; j < tabs; ++j)
         {
             if (h[i][j] % 2==0) {
-                sum_task += *(*(h + i) + j);
+                sum_task += h[i][j];
             }
         }
     }
